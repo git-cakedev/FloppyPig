@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Levels/ground.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/TileMap.gd" type="Script" id=2]
+
+[node name="TileMap" type="TileMap"]
+position = Vector2( 0, 64 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 128, 128 )
+collision_layer = 2
+format = 1
+script = ExtResource( 2 )
+GROUND_POS = 350

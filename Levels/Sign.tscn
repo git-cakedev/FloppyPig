@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://gfx/Assets/stop.png" type="Texture" id=1]
+
+[node name="Sign" type="StaticBody2D"]
+position = Vector2( -17.0833, -3.18457 )
+
+[node name="Stop_Sign" type="Sprite" parent="."]
+position = Vector2( 145.083, 131.185 )
+scale = Vector2( 0.378976, 0.378976 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 138.994, 82.5308, 150.955, 82.5308, 163.201, 88.9386, 169.324, 99.6183, 169.324, 111.437, 163.344, 122.117, 151.24, 127.955, 146.541, 128.097, 146.541, 179.645, 143.693, 179.645, 143.693, 128.097, 139.137, 128.097, 134.437, 126.674, 126.89, 122.117, 122.334, 115.851, 120.767, 111.295, 120.767, 99.4759, 122.334, 94.9193, 126.89, 88.9386, 131.59, 85.6635 )
