@@ -7,11 +7,16 @@
 radius = 28.4458
 height = 24.7194
 
-[node name="Player" type="KinematicBody2D"]
-position = Vector2( 342.421, 187.432 )
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+]]
+position = Vector2( 0.00203753, 0.0113201 )
 scale = Vector2( 2, 2 )
 collision_mask = 2
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 1 )]
 
@@ -19,14 +24,11 @@ script = ExtResource( 2 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="." groups=[
-"EnemyGroup",
-"PlayerGroup",
-]]
+[node name="Area2D" type="Area2D" parent="."]
 monitorable = false
 
 [node name="DeathCollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
 shape = SubResource( 1 )
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

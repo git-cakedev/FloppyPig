@@ -1,24 +1,25 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://gfx/Assets/fly/6969_0002_Fly-Guy-3.png" type="Texture" id=1]
-[ext_resource path="res://gfx/Assets/fly/6969_0000_w.png" type="Texture" id=2]
-[ext_resource path="res://gfx/Assets/fly/6969_0003_pUNCTURED-RECTUM.png" type="Texture" id=3]
+[ext_resource path="res://gfx/Assets/fly/6969_0003_pUNCTURED-RECTUM.png" type="Texture" id=2]
+[ext_resource path="res://gfx/Assets/fly/6969_0000_w.png" type="Texture" id=3]
 [ext_resource path="res://gfx/Assets/fly/6969_0001_GamerCaler.png" type="Texture" id=4]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 15.2382
 height = 31.052
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 6.0
 } ]
 
-[node name="Birb" type="RigidBody2D"]
-position = Vector2( 288, 96 )
+[node name="Birb" type="RigidBody2D" groups=[
+"Enemy",
+]]
 collision_layer = 2
 collision_mask = 3
 gravity_scale = 0.0
@@ -28,15 +29,17 @@ __meta__ = {
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 3 )
-frame = 2
+frames = SubResource( 2 )
+frame = 3
 playing = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=[
+"Enemy",
+]]
 
 [node name="DeathCollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 1 )
