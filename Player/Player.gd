@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 const JUMP_SPEED = 250
-const SPEED = 100
+const SPEED = 200
+var speedup = 10
 const GRAVITY = 10
 
 var velocity = Vector2(0,0)
@@ -23,6 +24,7 @@ func jump():
 
 func move():
 	velocity.x = SPEED
+	velocity.x += speedup
 
 func gravity():
 	velocity.y += GRAVITY

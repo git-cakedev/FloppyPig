@@ -10,10 +10,10 @@ func _on_Timer_timeout():
 		var bird_location = $"Camera".transform.origin
 		bird_location.y += i * 10
 		spawn_bird(bird_location)
-		var tree_location = $"Camera".transform.origin
-		tree_location.x += i * 10
-		spawn_tree(tree_location)
 		
+		
+	var tree_location = $"Camera".transform.origin
+	spawn_tree(tree_location)
 	randomize()
 	$"Timer".wait_time = int(rand_range(3, 10))
 
